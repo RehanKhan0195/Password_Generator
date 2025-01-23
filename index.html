@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 flex items-center justify-center h-screen">
+  <div class="w-96 bg-gray-800 p-6 rounded-lg shadow-lg">
+    <h1 class="text-center text-2xl font-bold mb-6">Password Generator</h1>
+    
+    <!-- Password display -->
+    <div class="relative mb-4">
+      <input type="text" id="password-display" class="w-full bg-gray-700 text-gray-100 p-2 rounded-md text-center" readonly>
+      <button id="copy-password" class="absolute right-2 top-2 text-green-500 hover:text-green-400">
+        📋
+      </button>
+    </div>
+
+    <!-- Slider for character length -->
+    <div class="mb-4">
+      <label for="char-length" class="block text-sm font-medium">Character Length: <span id="char-length-value">0</span></label>
+      <input type="range" id="char-length" min="4" max="20" value="0" class="w-full mt-2">
+    </div>
+
+    <!-- Checkboxes -->
+    <div class="mb-4 space-y-2">
+      <div>
+        <input type="checkbox" id="uppercase" class="mr-2">
+        <label for="uppercase">Include Uppercase Letters</label>
+      </div>
+      <div>
+        <input type="checkbox" id="lowercase" class="mr-2">
+        <label for="lowercase">Include Lowercase Letters</label>
+      </div>
+      <div>
+        <input type="checkbox" id="numbers" class="mr-2">
+        <label for="numbers">Include Numbers</label>
+      </div>
+      <div>
+        <input type="checkbox" id="symbols" class="mr-2">
+        <label for="symbols">Include Symbols</label>
+      </div>
+    </div>
+
+    <!-- Strength -->
+    <div class="mb-4">
+      <label class="block text-sm font-medium">Strength</label>
+      <div id="strength-bar" class="w-full h-2 bg-gray-700 rounded-md mt-2">
+        <div id="strength-fill" class="h-full bg-green-500 rounded-md" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Generate Button -->
+    <button id="generate-btn" class="w-full bg-green-500 hover:bg-green-400 text-gray-900 font-bold py-2 rounded-md">Generate</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
